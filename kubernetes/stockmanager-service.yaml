@@ -35,7 +35,9 @@ spec:
         ports:
         - containerPort: 8030
         livenessProbe:
+          failureThreshold: 1
           httpGet:
+            scheme: HTTP
             path: /health
             port: 8030
           initialDelaySeconds: 30
